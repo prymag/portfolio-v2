@@ -1,6 +1,10 @@
 /* ── Skills ─────────────────────────────────────────────── */
 #skills { background: var(--bg); }
 
+#skills .section-label,
+#skills .section-title { text-align: center; }
+#skills .divider { margin-left: auto; margin-right: auto; }
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

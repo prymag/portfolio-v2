@@ -1,5 +1,9 @@
 /* ── What I Do ───────────────────────────────────────────── */
-#projects { background: var(--bg2); }
+#projects { background: var(--bg3); }
+
+#projects .section-label,
+#projects .section-title { text-align: center; }
+#projects .divider { margin-left: auto; margin-right: auto; }
 
 .expertise-grid {
   display: grid;

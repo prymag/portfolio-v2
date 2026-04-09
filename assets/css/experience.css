@@ -1,5 +1,9 @@
 /* ── Experience / Timeline ──────────────────────────────── */
-#experience { background: var(--bg); }
+#experience { background: var(--bg3); }
+
+#experience .section-label,
+#experience .section-title { text-align: center; }
+#experience .divider { margin-left: auto; margin-right: auto; }
 
 .timeline { position: relative; max-width: 780px; margin: 0 auto; }
 

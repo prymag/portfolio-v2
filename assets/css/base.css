@@ -108,17 +108,22 @@ section {
 /* ── Tags ───────────────────────────────────────────────── */
 .tag {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   background: var(--bg3);
   border: 1px solid var(--border);
   color: var(--text-muted);
-  padding: 0.25rem 0.65rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 4px;
 }
 .tag.red {
   background: var(--red-glow);
   border-color: rgba(230, 57, 70, 0.4);
-  color: var(--red);
+  color: #ff8a93;
+}
+.tag i {
+  font-size: 1em;
+  vertical-align: middle;
+  margin-left: 0.3rem;
 }
 
 /* ── Fade-in animation ──────────────────────────────────── */
