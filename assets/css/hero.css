@@ -1,0 +1,194 @@
+/* ── Hero ───────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-h) + 2rem);
+  padding-left: clamp(1.25rem, 6vw, 10rem);
+  padding-right: clamp(1.25rem, 6vw, 10rem);
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(230, 57, 70, 0.07) 0%, transparent 70%),
+    var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.25;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+/* ── Two-column layout ──────────────────────────────────── */
+.hero-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.hero-content { position: relative; }
+
+/* ── Code card ──────────────────────────────────────────── */
+.hero-code-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-code-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(230, 57, 70, 0.08),
+    0 24px 64px rgba(0, 0, 0, 0.4);
+}
+
+.code-card-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot-red    { background: #ff5f57; }
+.dot-yellow { background: #febc2e; }
+.dot-green  { background: #28c840; }
+
+.code-card-filename {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.code-card-body {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  line-height: 1.9;
+  overflow-x: auto;
+}
+
+.code-card-body code { background: none; padding: 0; }
+
+/* syntax colours */
+.cc-keyword { color: #c792ea; }
+.cc-var     { color: #82aaff; }
+.cc-prop    { color: #f07178; }
+.cc-str     { color: #c3e88d; }
+.cc-bool    { color: #ff9cac; }
+.cc-punct   { color: var(--text-muted); }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-code-wrap { justify-content: flex-start; }
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--red-glow);
+  border: 1px solid rgba(230, 57, 70, 0.35);
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+.hero-tag::before { content: '▶'; font-size: 0.6rem; }
+
+.hero-name {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-name .accent {
+  color: white;
+  background: var(--red);
+  border-radius: 4px;
+  padding: 2px 6px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hero-role {
+  font-family: var(--mono);
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-role .cursor {
+  display: inline-block;
+  width: 2px; height: 1.1em;
+  background: var(--red);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-desc {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* ── Stats ──────────────────────────────────────────────── */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.3rem;
+}

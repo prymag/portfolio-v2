@@ -1,0 +1,75 @@
+/* ── Footer ─────────────────────────────────────────────── */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem clamp(1.25rem, 6vw, 10rem);
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+/* Terminal window */
+.terminal-window {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+/* History lines (past commands) */
+.terminal-history {
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-history-line {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* Active input line */
+.terminal-line {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-prompt {
+  color: var(--red);
+  user-select: none;
+}
+
+.terminal-typed {
+  color: var(--text);
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: var(--red);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Back to top */
+.back-to-top {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.back-to-top:hover { color: var(--red); }
+
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .terminal-window { width: 100%; }
+}
