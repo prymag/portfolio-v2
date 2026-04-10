@@ -1,6 +1,7 @@
 export function initFooter() {
   const phrases = [
-    'sh "perry-mark-guinjicna-fullstack-dev.sh"',
+    'ssh prymag@perrymark.dev',
+    'cd ~',
     'mkdir project && cd project',
     'touch index.php',
     'echo "<?php phpinfo();" > index.php',
@@ -8,7 +9,7 @@ export function initFooter() {
     'echo "FROM php:8.4-alpine" > Dockerfile',
     'echo "COPY ./ /var/www/html/" >> Dockerfile',
     'docker build -t app .',
-    'docker run -d -p 80:80 --name my-app app',
+    'docker run -d -p 443:443 -p 80:80 --name my-app app',
     'docker ps',
     'docker rm -f my-app',
     'rm -rf *',
